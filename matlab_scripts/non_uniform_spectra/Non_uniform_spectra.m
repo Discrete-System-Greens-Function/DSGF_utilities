@@ -16,7 +16,7 @@ c_0 = 299792458;            % Speed of light in vacuum [m/s]
 %%%%%%%%%%%%%%%%%%%%%%%
 % Select the material %
 %%%%%%%%%%%%%%%%%%%%%%%
-%{
+
 material = 'SiO2';
 omega_i = 7.5e13;
 N_ref_1 = 20;
@@ -31,10 +31,10 @@ N_ref_5 = 10;
 omega_ref_5 = 3e14;
 N_ref_6 = 5;
 omega_f = 3.5e14 ;
-%}
 
 
 
+%{
 material = 'SiC';
 omega_i = 1.4e14;
 N_ref_1 = 5;
@@ -49,7 +49,7 @@ N_ref_5 = 10;
 omega_ref_5 = 1.84e14;
 N_ref_6 = 10;
 omega_f = 1.9e14 ;
-
+%}
 
 
 %{
@@ -93,6 +93,19 @@ back = cd;
 %spectra = [saveDir '/' material '_non_uniform_spectra_' num2str(N_omega)  '.csv']; %save in DSGF library folder
 spectra = [ material '_non_uniform_spectra_' num2str(N_omega)  '.csv']; %if local
 writematrix(omega', spectra);
+
+%{
+spectra_1 = [ material '_non_uniform_spectra_' num2str(N_omega/5)  '_split_1.csv']; %if local
+writematrix(omega(1:20)', spectra_1);
+spectra_2 = [ material '_non_uniform_spectra_' num2str(N_omega/5)  '_split_2.csv']; %if local
+writematrix(omega(21:40)', spectra_2);
+spectra_3 = [ material '_non_uniform_spectra_' num2str(N_omega/5)  '_split_3.csv']; %if local
+writematrix(omega(41:60)', spectra_3);
+spectra_4 = [ material '_non_uniform_spectra_' num2str(N_omega/5)  '_split_4.csv']; %if local
+writematrix(omega(61:80)', spectra_4);
+spectra_5 = [ material '_non_uniform_spectra_' num2str(N_omega/5)  '_split_5.csv']; %if local
+writematrix(omega(81:100)', spectra_5);
+%}
 
 if strcmp('SiO2',material)
     
