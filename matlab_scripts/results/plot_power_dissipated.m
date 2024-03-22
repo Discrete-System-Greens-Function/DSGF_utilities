@@ -11,7 +11,7 @@ show_axes = 1;
 mesh = 1;
 
 %Insert the path shown in the terminal.
-results_folder = 'results/thin-films_352_subvolumes/SiO2_d_5.00e-07/23_02_24_10_08_42';%'results/thin-films_2_subvolumes/SiO2_d_5.00e-07/23_02_23_11_51_10';%%'results/thin-films_500_subvolumes/SiC_d_1.00e-07/23_02_20_09_54_11';%'results/thin-films_10000_subvolumes/SiC_d_1.00e-07/23_02_17_16_50_46';%'results/thin-films_6000_subvolumes/SiC_d_1.00e-07/23_02_17_12_19_53';%'results/thin-films_4000_subvolumes/SiC_d_1.00e-07/23_02_17_10_49_28';%'results/thin-films_3000_subvolumes/SiC_d_1.00e-07/23_02_17_09_51_50';%'results/thin-films_2000_subvolumes/SiC_d_1.00e-07/23_02_17_09_32_54';%'results/thin-films_1000_subvolumes/SiC_d_1.00e-07/23_02_17_09_13_11';
+results_folder = 'results/thin-films_352_subvolumes/SiO2_d_5.00e-07/23_02_24_10_08_42';
 
 % Complete directory to import the results
 back = cd;
