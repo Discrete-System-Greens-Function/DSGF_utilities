@@ -49,10 +49,10 @@ show_titles = 1;
 % Dimension inputs %
 %%%%%%%%%%%%%%%%%%%%
 
-d = 100e-9;%85e-9;  % Distance between the two films [m]
-Lx = 1000e-9;%990e-9; %1000
-Ly = 1000e-9;%990e-9; %1000
-Lz = 20e-9;
+d = 100e-9;  % Distance between the two films [m]
+Lx = 1000e-9;
+Ly = 1000e-9;
+Lz = 1000e-9;
 refinements = 2;
 slope = 'n';
 rotate = 'n';
