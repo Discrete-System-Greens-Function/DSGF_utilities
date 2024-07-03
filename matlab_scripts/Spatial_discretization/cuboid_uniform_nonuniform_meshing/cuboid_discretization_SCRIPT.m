@@ -44,9 +44,6 @@ n_2 = 4;            % Number of subvolumes for refinement 2 across the smallest 
 % Set type of discretization export %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Save discretization in an Excel file? (0 = "no", 1 = "yes")
-save_Excel = 0;
-
 % Save discretization in an .txt file? (0 = "no", 1 = "yes")
 save_txt = 1;
 
@@ -294,12 +291,6 @@ end
 %%%%%%%%%%%%%%%%%%%%%%%%
 % Save discretizations %
 %%%%%%%%%%%%%%%%%%%%%%%%
-
-% Save discretization matrix to an Excel file
-if save_Excel == 1
-    disc_path_1 = [saveDir 'Excel_files/' file_name_saved '_discretization.xlsx'];
-    writematrix(r, disc_path_1)
-end
 
 if save_txt == 1
 % Save discretization matrix to a .txt file
