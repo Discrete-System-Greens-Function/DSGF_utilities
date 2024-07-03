@@ -44,9 +44,6 @@ n_2 = 4;            % Number of subvolumes for refinement 2 across the smallest 
 % Set type of discretization export %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-back = cd;
-saveDir = 'Discretizations/'; %fullfile(back, '../../../library/discretizations/thin-film/');
-
 % Save discretization in an Excel file? (0 = "no", 1 = "yes")
 save_Excel = 0;
 
@@ -206,6 +203,9 @@ L_sub = delta_V_vector.^(1/3); % Vector of length of a side of each cubic subvol
 %%%%%%%%%%%%%
 % File name %
 %%%%%%%%%%%%%
+
+back = cd;
+saveDir = 'Discretizations/';
 
 % File name for saved discretizations
 file_name_saved = [description '_Lx' num2str((1e9)*Lx) 'nm_Ly' num2str((1e9)*Ly) 'nm_Lz' num2str((1e9)*Lz) 'nm_d' num2str((1e9)*d) 'nm_N'  num2str(N)]; % File name where results will be saved
