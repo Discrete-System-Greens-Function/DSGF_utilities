@@ -40,9 +40,9 @@ n_1 = 8;            % Number of subvolumes  for refinement 1 across the smallest
 Lx_ref_2 = 250e-9;  % Refinement length if refinement = 2 
 n_2 = 4;            % Number of subvolumes for refinement 2 across the smallest dimension given 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Set type of discretization export %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Set discretization and figure export %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Save discretization in an .txt file? (0 = "no", 1 = "yes")
 save_txt = 1;
@@ -50,10 +50,9 @@ save_txt = 1;
 % Save figures? (0 = "no", 1 = "yes")
 save_fig = 1;
 
-
-%%%%%%%%%%%%%%%%%%
-% Figure options %
-%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%
+% Set figure options %
+%%%%%%%%%%%%%%%%%%%%%%
 
 % Show figure axes? (0 = "no", 1 = "yes")
 show_axes = 1;
