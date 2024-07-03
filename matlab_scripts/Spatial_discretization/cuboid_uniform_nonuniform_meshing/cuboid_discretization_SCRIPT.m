@@ -18,7 +18,7 @@ disp(['Running MATLAB script ' mfilename])
 %******************************USER INPUTS********************************%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Set dimensions and mesh uniformity %
+% Set dimensions and mesh refinement %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 description = '2_cubes';  % Description of geometry
