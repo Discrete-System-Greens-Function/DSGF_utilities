@@ -1,5 +1,5 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%Non-uniform spectrum generation for the c version of DSGF solver
+%Non-uniform spectral discretization for the c version of DSGF solver
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%
@@ -16,8 +16,9 @@ c_0 = 299792458;            % Speed of light in vacuum [m/s]
 %%%%%%%%%%%%%%%%%%%%%%%
 % Select the material %
 %%%%%%%%%%%%%%%%%%%%%%%
-%{
-% SiO2 in terms of wavelength
+
+
+%----------- SiO2 in terms of wavelength -----------------
 material = 'SiO2';
 initial_lambda = 5.e-6; 
 final_lambda = 25.e-6;
@@ -30,9 +31,10 @@ N_omega = length(omega);
 lambda_i = initial_lambda*10^(6);
 lambda_f = final_lambda*10^(6);
 spectra = [ material '_' num2str(N_omega) '_uniform_' num2str(lambda_i) '_' num2str(lambda_f) '_um.csv']; %if local
-%}
+%----------- end SiO2 in terms of wavelength -----------------
 
-% SiO2 in terms of angular frequency
+%{
+%----------- SiO2 in terms of angular frequency -----------------
 material = 'SiO2';
 initial = 7.5e13; 
 final = 2.5e14;
@@ -42,9 +44,10 @@ N_omega = length(omega);
 wi = initial*10^(-12);
 wf = final*10^(-12);
 spectra = [ material '_' num2str(N_omega) '_uniform_' num2str(wi) '_' num2str(wf) '_Trad_s.csv']; %if local
-
+%----------- end SiO2 in terms of angular frequency -----------------
+%}
 %{
-% SiC in terms of angular frequency
+%----------- SiC in terms of angular frequency -----------------  
 material = 'SiC'; 
 initial = 1.4e14; 
 final = 1.9e14;
@@ -54,10 +57,11 @@ N_omega = length(omega);
 wi = initial*10^(-12);
 wf = final*10^(-12);
 spectra = [ material '_' num2str(N_omega) '_uniform_' num2str(wi) '_' num2str(wf) '_Trad_s.csv']; %if local
+%----------- end SiC in terms of angular frequency -----------------
 %}
 
 %{
-% Si3N4 in terms of angular frequency
+%----------- Si3N4 in terms of angular frequency -----------------  
 material = 'Si3N4';
 initial = 2.e13; 
 final = 3.e14;
@@ -67,6 +71,7 @@ N_omega = length(omega);
 wi = initial*10^(-12);
 wf = final*10^(-12);
 spectra = [ material '_' num2str(N_omega) '_uniform_' num2str(wi) '_' num2str(wf) '_Trad_s.csv']; %if local
+%----------- end Si3N4 in terms of angular frequency -----------------
 %}
 
 %lambda = 2*pi*c_0./omega;
