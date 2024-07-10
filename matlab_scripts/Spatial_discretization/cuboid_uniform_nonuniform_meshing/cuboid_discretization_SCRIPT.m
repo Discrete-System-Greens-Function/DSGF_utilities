@@ -21,34 +21,34 @@ disp(['Running MATLAB script ' mfilename])
 % Set dimensions and mesh refinement %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-description = '2_cubes';  % Description of geometry
+description = '2_membranes';  % Description of geometry
 
-d = 500e-9;     % Distance between the two cuboids [m]
-Lx = 500e-9;    % Dimension in x-direction for both the cuboids [m]
-Ly = 500e-9;    % Dimension in y-direction for both the cuboids [m]
-Lz = 500e-9;    % Dimension in z-direction for both the cuboids [m]
+d = 100e-9;     % Distance between the two cuboids [m]
+Lx = 1000e-9;    % Dimension in x-direction for both the cuboids [m]
+Ly = 1000e-9;    % Dimension in y-direction for both the cuboids [m]
+Lz = 100e-9;    % Dimension in z-direction for both the cuboids [m]
 
 % To generate uniform and nonuniform discretization: 
     % Uniform: set refinements = 0 and n_0 with the number of subvolumes across the smallest dimension given.
-    % Nonuniform with 1 refinement: set refinements = 1, n_0 with the number of subvolumes for the less refined mesh, Lx_ref_1 with the more refined length closer to the gap, and n_1 with the number of subvolumes for the more refined mesh. 
-    % Nonuniform with 2 refinements: set refinements = 2, n_0 with the number of subvolumes for the less refined mesh, Lx_ref_1 with the intermediate refined length, n_1 with the number of subvolumes for the intermediate refined mesh, Lx_ref_2 with the more refined length closer to the gap, and n_2 with the number of subvolumes for the more refined mesh. 
+    % Nonuniform with 1 refinement: set refinements = 1, n_0 as the number of subvolumes for the least refined mesh, Lx_ref_1 as the most refined length closer to the gap, and n_1 with the number of subvolumes for the most refined mesh. 
+    % Nonuniform with 2 refinements: set refinements = 2, n_0 as the number of subvolumes for the least refined mesh, Lx_ref_1 as the intermediate refined length, n_1 with the number of subvolumes for the intermediate refined mesh, Lx_ref_2 with the most refined length closer to the gap, and n_2 with the number of subvolumes for the most refined mesh. 
 
-refinements = 1;    % Choose between 0, 1, or 2. 
-n_0 = 4;            % Number of subvolumes for no refinement across the smallest dimension given 
+refinements = 2;    % Choose between 0, 1, or 2. 
+n_0 = 2;            % Number of subvolumes for no refinement across the dimension in the z-axis
 Lx_ref_1 = 250e-9;  % Refinement length if refinement = 1 or 2
-n_1 = 8;            % Number of subvolumes  for refinement 1 across the smallest dimension given
+n_1 = 4;            % Number of subvolumes  for refinement 1 across the dimension in the z-axis
 Lx_ref_2 = 250e-9;  % Refinement length if refinement = 2 
-n_2 = 4;            % Number of subvolumes for refinement 2 across the smallest dimension given 
+n_2 = 8;            % Number of subvolumes for refinement 2 across the dimension in the z-axis
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Set discretization and figure export %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Save discretization in an .txt file? (0 = "no", 1 = "yes")
-save_txt = 1;
+save_txt = 0;
 
 % Save figures? (0 = "no", 1 = "yes")
-save_fig = 1;
+save_fig = 0;
 
 %%%%%%%%%%%%%%%%%%%%%%
 % Set figure options %
@@ -63,7 +63,8 @@ show_titles = 1;
 %****************************END USER INPUTS******************************%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-cord = 'min'; % String of coordinate along which direction mesh is to be refined. 'Min' refers to the smallest dimension.
+cord = 'z'; % String of coordinate along which direction mesh is to be refined. 'z' refers to the dimension in the z-axis.
+%cord = 'min'; % String of coordinate along which direction mesh is to be refined. 'Min' refers to the smallest dimension.
 
 if refinements == 0
     % Thermal source #1
@@ -201,7 +202,7 @@ L_sub = delta_V_vector.^(1/3); % Vector of length of a side of each cubic subvol
 %%%%%%%%%%%%%
 
 back = cd;
-saveDir = 'Discretizations/';
+saveDir = 'Discretizations/'; 
 
 % File name for saved discretizations
 file_name_saved = [description '_Lx' num2str((1e9)*Lx) 'nm_Ly' num2str((1e9)*Ly) 'nm_Lz' num2str((1e9)*Lz) 'nm_d' num2str((1e9)*d) 'nm_N'  num2str(N)]; % File name where results will be saved
